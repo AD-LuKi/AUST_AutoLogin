@@ -12,6 +12,7 @@ send_data = {
 'R3': 0,
 'R6': 0,
 'para': 00,
+  # 电信6774，移动8487
 'v': 8843
 }
 request_header = {
