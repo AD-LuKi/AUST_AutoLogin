@@ -1,20 +1,18 @@
 import requests as R
+import time as T
+
+# DDDDD中的后缀：联通写unicom，电信写aust，移动写cmcc
 address = 'http://10.255.0.19/a79.htm'
+send_data = {'callback': 'dr1003','DDDDD': '学号@后缀','upass': '校园网密码','0MKKey': '123456'}
+request_header = {'Connection': 'keep-alive', 'Host': '10.255.0.19'}
+try:
+    response = R.post(address,send_data,headers=request_header).status_code
+    print("Wait for 3 seconds to login secondly .")
+    T.sleep(3)
+    response = R.post(address,send_data,headers=request_header).status_code
 
-# DDDDD一项为'学号@后缀'形式
-# 后缀：联通写unicom，电信写aust，移动写cmcc
-send_data = {'callback': 'dr1003', 'DDDDD': '学号@后缀', 'upass': '校园网密码', '0MKKey': '123456'}
-request_header = {
-'Accept': '*/*',
-'Accept-Encoding': 'gzip, deflate',
-'Accept-Language': 'zh-CN,zh;q=0.9',
-'Connection': 'keep-alive',
-'Cookie': 'PHPSESSID=7oq2647ceba04rmiotvvlu1347',
-'Host': '10.255.0.19',
-'Referer': 'http://10.255.0.19/a79.htm',
-'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36'
-}
-response = R.post(address,send_data,headers=request_header).status_code
+    print("Login Successfully !")
+    print("I Love AUST !")
+except:
+    print("登录异常，请检查账号、后缀、密码是否正确后重试。\n如排除以上错误，请联系QQ2033930698反馈，不胜感激！")
 
-# 一般接受返回信息应该是200
-print("返回信息 : {}".format(response))
