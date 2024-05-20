@@ -2,8 +2,8 @@ import requests as R
 address = 'http://10.255.0.19/a79.htm'
 send_data = {
 'callback': 'dr1003',
-'DDDDD': '2022304240@unicom',
-'upass': 'lhh0211',
+'DDDDD': '此处填学号@unicom',
+'upass': '此处填校园网密码',
 '0MKKey': '123456',
 'R1': 0,
 'R3': 0,
