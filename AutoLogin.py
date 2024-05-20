@@ -1,8 +1,8 @@
 import requests as R
 import time as T
 
-# DDDDD中的后缀：联通写unicom，电信写aust，移动写cmcc
 address = 'http://10.255.0.19/a79.htm'
+# DDDDD中的后缀：联通写unicom，电信写aust，移动写cmcc
 send_data = {'callback': 'dr1003','DDDDD': '学号@后缀','upass': '校园网密码','0MKKey': '123456'}
 request_header = {'Connection': 'keep-alive', 'Host': '10.255.0.19'}
 try:
